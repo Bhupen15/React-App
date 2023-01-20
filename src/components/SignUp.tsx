@@ -131,6 +131,8 @@ function SignUp() {
                 }
                 else {
                     toast.error("Account already exist");
+
+                    
                 }
 
             }
