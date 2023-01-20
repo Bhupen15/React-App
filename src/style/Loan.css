@@ -1,0 +1,63 @@
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.loan{
+
+    min-height: 92vh;
+   background-color: rgb(112, 231, 240);
+   
+}
+
+
+
+.ft{
+  min-height: 3.5vh;
+    background:black;
+    color: white;
+
+    
+}
+
+
+.left{
+    position: absolute;
+    left: 5px;
+
+}
+
+.right{
+
+    position: absolute;
+    right: 5px;
+}
+
+.pt{
+
+    background-image: url('../Images/loan.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 92vh;
+
+}
+h1{
+    margin-bottom: 0% !important;
+    text-align: center;
+
+}
+p{
+    margin-bottom: 0% !important;
+    text-align: center;
+}
+
+
+.admin{
+    min-height: 91vh; 
+    background-color: rgb(124, 111, 241);
+}
+.userlist{
+    min-height: 91vh; 
+    /* background-color: rgb(231, 230, 240); */
+}
