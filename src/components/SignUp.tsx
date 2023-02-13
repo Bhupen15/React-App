@@ -3,16 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import FormHook from '../hooks/FormHook';
 import signup from '../services/create';
 import { ToastContainer, toast } from 'react-toastify';
-import { HtmlHTMLAttributes, useState } from 'react'
-import { Link } from 'react-router-dom';
-// import "./LoginForm.css";
+import { useState } from 'react'
+
 import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp() {
 
     const navigate = useNavigate();
-
-
 
     const emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i;
     const passregex = /^[A-Za-z0-9!@#$%^&*()_]{6,16}$/i;
@@ -110,7 +107,7 @@ function SignUp() {
         evt.preventDefault();
 
         if (fnameerror === "" && lnameerror === "" && emailerror === "" && moberror === "" && passerror === "" && cpass === "") {
-            if (fname.value === "" && lname.value === "" && email.value === "" && mobile.value === "" && password.value === "") {
+            if (fname.value === "" || lname.value === "" || email.value === "" || mobile.value === "" || password.value === "") {
                 toast.error("Please fill the values");
             }
 
@@ -132,14 +129,14 @@ function SignUp() {
                 else {
                     toast.error("Account already exist");
 
-                    
                 }
 
             }
+
         }
         else {
 
-            toast.error("Fill the value");
+            toast.error("Please fill the values properly");
         }
     }
 

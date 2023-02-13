@@ -13,6 +13,7 @@
 
 
 
+
 .ft{
   min-height: 3.5vh;
     background:black;
@@ -58,6 +59,58 @@ p{
     background-color: rgb(124, 111, 241);
 }
 .userlist{
-    min-height: 91vh; 
-    /* background-color: rgb(231, 230, 240); */
+    min-height: 93vh; 
+ 
 }
+.list{
+
+    background-color: rgb(72, 227, 238);
+}
+
+.body{
+    min-height: 92vh;
+    background-color: rgb(72, 227, 238);
+
+
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fhead{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(41, 181, 232);
+}
+
+
+
+@media screen and (max-width: 770px) {
+    .finput{
+        margin: 6px;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.cinput{
+
+    background-color: rgb(189, 241, 254);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+} 

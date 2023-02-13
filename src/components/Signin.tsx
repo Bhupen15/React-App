@@ -3,9 +3,7 @@ import login from '../services/login';
 import FormHook from '../hooks/FormHook';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { HtmlHTMLAttributes, useState } from 'react'
-import { Link } from 'react-router-dom';
-// import "./LoginForm.css";
+import { useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -57,7 +55,9 @@ function Signin() {
           password: password.value
         }
         let result = await login(data);
+
         const success = result.data.messages.success;
+        const token = result.data.messages.token;
         if (success) {
 
           const role = result.data.messages.role;
@@ -68,19 +68,23 @@ function Signin() {
             role: role,
           }
           localStorage.setItem("session", JSON.stringify(session));
+          localStorage.setItem("token", JSON.stringify(token));
 
           toast.success("login successful");
-          if (role ==='1')
-            
+          if (role === '1')
+
             navigate('/admin');
-          else if (role === '0')
+          else if (role === '0') {
+
             navigate('/user');
+            window.location.reload();
+          }
 
         }
         else {
           const message = result.data.messages.message;
           toast.error(message);
-          
+
         }
       }
     }
@@ -89,6 +93,7 @@ function Signin() {
 
 
   return (
+    // login form
     <div className='loan'>
       <div className="container ">
         <div className="row justify-content-md-center">
@@ -106,8 +111,6 @@ function Signin() {
                 <input type="password" name="password" placeholder="Password" className="form-control" {...password} onChangeCapture={checkPass} />
                 <p className='text-danger'>  {passerror}</p>
               </div>
-              {/* <div className="g-recaptcha mb-2" data-sitekey="6Lfp_dIjAAAAAAobizDB9S0Xl3_XqtWvyy_QV7kF"></div> */}
-
               <div className="d-grid">
                 <button type="submit" className="btn btn-dark">Signin</button>
               </div>
@@ -117,8 +120,8 @@ function Signin() {
         </div>
       </div>
 
-<ToastContainer limit={1}/>
-      
+      <ToastContainer limit={1} />
+
     </div>
   )
 }

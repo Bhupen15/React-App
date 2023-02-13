@@ -3,16 +3,19 @@ import { User, getAlluser } from '../services/AdminServices';
 import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 import { Box } from '@mui/material';
 
+
+
 function Userlist() {
+    
 
     const [users, setUsers] = useState<User[]>();
     useEffect(() => {
         getAlluser().then(res => setUsers(res.data)).catch(err => console.log(err));
     }, [])
-
+   
 
   
-
+//It will show the data in form of grid 
     const columns: GridColDef[] = [
         { field: 'sno', headerName: 'sno', width: 100 },
 
@@ -20,30 +23,30 @@ function Userlist() {
             field: 'fname',
             headerName: 'First Name',
             width: 300,
-            // editable: true,
+           
         }, {
             field: 'lname',
             headerName: 'Last Name',
             width: 300,
-            // editable: true,
+            
         },
         {
             field: 'email',
             headerName: 'Email',
             width: 300,
-            // editable: true,
+           
         },
         {
             field: 'mobile',
             headerName: 'Mobile',
             width: 300,
-            // editable: true,
+           
         },
         {
             field: 'role',
             headerName: 'Role',
             width: 150,
-            // editable: true,
+           
         },
 
     ];
