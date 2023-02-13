@@ -200,6 +200,7 @@ export const Apply = () => {
             "mobile": preData.mobile,
             "sno": sno,
         };
+        // ritik is changing this file for now 
         let check:boolean = false;
         
         let values = Object.values(formData);
