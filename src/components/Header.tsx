@@ -18,10 +18,7 @@ function Header() {
     let path = location.pathname;
     const [isMyProfileOpen, setIsMyProfileOpen] = useState(false);
     const [isLogOutOpen, setIsLogOutOpen] = useState(false);
-
     const navigate = useNavigate();
-
-
 
     const [userDetails, setUserDetails] = useState({
         fname: "",

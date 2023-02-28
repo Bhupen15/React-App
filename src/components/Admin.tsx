@@ -201,7 +201,7 @@ function Admin() {
                         }
                     </>
                 );
-            } 
+            }
         },
 
         //It is update button
@@ -241,7 +241,7 @@ function Admin() {
                         {
                             cellValues.row.role === "0" ?
                                 <button className='btn btn-outline-danger' onClick={() => { userdelete(cellValues.row.sno) }}> Delete</button> :
-                                <h4></h4>                        }
+                                <h4></h4>}
                     </>
                 );
             }
@@ -335,7 +335,7 @@ function Admin() {
                                     {index + 1}
                                 </button>
                             ))}
-                            </div>
+                        </div>
                     </Box>
                 </div>
 
